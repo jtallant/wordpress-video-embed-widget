@@ -62,10 +62,8 @@ class Jt_Wp_Video_Embed_Widget extends WP_Widget {
 		$content .= ( ! empty($height) ) ? ' height="' . $height . '"' : '';
 		$content .= ']' . $url . '[/embed]';
 
-		$embed = new Jt_Widget_WP_Embed($rel, $widget['widget_id']);
-
+		$embed = new Jt_Widget_WP_Embed($rel, $widget['widget_id'] . $width . $height);
 		echo $embed->run_shortcode($content);
-
 		echo $after_widget;
 	}
 

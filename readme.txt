@@ -7,7 +7,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Extremely lightweight video embed widget. This embed widget utilizes the native WordPress embed code and supports everything that the WordPress embed code supports. You can actually do a lot more than embed videos.
+Extremely lightweight video embed widget. This embed widget utilizes the native WordPress embed code and supports everything that the WordPress embed code supports. You can do a lot more than embed videos.
 
 == Description ==
 

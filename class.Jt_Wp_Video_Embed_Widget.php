@@ -62,6 +62,7 @@ class Jt_Wp_Video_Embed_Widget extends WP_Widget {
 		$content .= ( ! empty($height) ) ? ' height="' . $height . '"' : '';
 		$content .= ']' . $url . '[/embed]';
 
+		global $widget;
 		$embed = new Jt_Widget_WP_Embed($rel, $widget['widget_id']);
 
 		echo $embed->run_shortcode($content);
@@ -162,6 +163,7 @@ class Jt_Widget_WP_Embed extends WP_Embed {
 
 		$this->disable_related = $disable_related;
 		$this->widget_id = $widget_id;
+		$this->post_ID = null;
 	}
 
 	function shortcode( $attr, $url = '' ) {
@@ -207,7 +209,7 @@ class Jt_Widget_WP_Embed extends WP_Embed {
 		// return the transient html value if its available
 		if ( false !== $transient) {
 
-			return apply_filters( 'embed_oembed_html', $transient, $url, $attr, $post_ID );
+			return apply_filters( 'embed_oembed_html', $transient, $url, $attr, $post_ID = null );
 		}
 
 		// Use oEmbed to get the HTML
